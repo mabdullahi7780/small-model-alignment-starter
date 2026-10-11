@@ -1,0 +1,19 @@
+{
+  "source": {
+    "repo": "tatsu-lab/alpaca_eval",
+    "file": "alpaca_eval.json",
+    "revision": "2edc6fad8be6b14ea7230aabfd08188da6b8b814",
+    "sha256": "d92b92c51e8f1962a21193abe74e6f727c2bc8286035f4041505ff38a7c3ae51"
+  },
+  "source_rows": 805,
+  "size": 300,
+  "seed": 42,
+  "selection": "sorted(random.Random(seed).sample(range(source_rows), size))",
+  "source_mix": {
+    "selfinstruct": 95,
+    "koala": 60,
+    "oasst": 54,
+    "helpful_base": 51,
+    "vicuna": 40
+  }
+}
