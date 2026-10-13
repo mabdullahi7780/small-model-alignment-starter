@@ -92,6 +92,8 @@ def evaluate(model, batches: list[dict], device: torch.device, use_amp: bool) ->
     """Token-mean response NLL over the whole validation set."""
 
     model.eval()
+    if device.type == "cuda":
+        torch.cuda.empty_cache()  # return cached training blocks before the large logits tensors
     total_nll, total_tokens = 0.0, 0
     for batch in batches:
         with autocast(device, use_amp):

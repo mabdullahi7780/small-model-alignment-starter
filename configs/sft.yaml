@@ -21,5 +21,5 @@ precision: fp16_autocast      # fp32 master weights, fp16 autocast, dynamic loss
 gradient_checkpointing: false
 
 eval_every: 100               # optimizer steps
-eval_batch_size: 8
+eval_batch_size: 2            # 8 ran out of memory on a T4 once the Adam states exist (logits are 8 x 511 x 151,936)
 log_every: 10
