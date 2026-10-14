@@ -59,8 +59,13 @@ def generate_responses(
     max_new_tokens: int = 512,
     repetition_penalty: float = 1.0,
     no_repeat_ngram_size: int = 0,
+    formatter=format_prompt,
 ) -> list[dict]:
-    """Greedy-decode one response per instruction, returned in the input order."""
+    """Greedy-decode one response per instruction, returned in the input order.
+
+    `formatter` turns an instruction into the prompt text: our shared format by default, or
+    a model's own chat template (SmolLM2 in Task 5).
+    """
 
     import torch
 
@@ -71,7 +76,7 @@ def generate_responses(
     turn_start_id = tokenizer.convert_tokens_to_ids(TURN_START)
     device = next(model.parameters()).device
 
-    texts = [format_prompt(instruction) for instruction in instructions]
+    texts = [formatter(instruction) for instruction in instructions]
     lengths = [len(tokenizer(text, add_special_tokens=False).input_ids) for text in texts]
     # Longest prompts first: similar lengths share a batch (less padding), and an
     # out-of-memory error shows up on the first batch rather than the last.
@@ -136,6 +141,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--model", required=True, help="Hub id or local checkpoint directory")
     parser.add_argument("--tokenizer", default=None, help="defaults to --model")
+    parser.add_argument("--adapter", default=None, help="LoRA adapter directory to apply on top of --model")
+    parser.add_argument("--prompt-format", default="chatml", choices=["chatml", "chat_template"],
+                        help="chatml: the shared Qwen format; chat_template: the tokenizer's own template")
     parser.add_argument("--generator", required=True, help="name stored in every record")
     parser.add_argument("--prompts", required=True, help="JSON list with id and instruction")
     parser.add_argument("--dataset", default=None, help="defaults to each prompt's 'dataset' field")
@@ -163,7 +171,17 @@ def main(argv: list[str] | None = None) -> int:
     prompts = load_prompts(args.prompts, args.limit)
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer or args.model)
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=getattr(torch, args.dtype))
+    if args.adapter:
+        from peft import PeftModel
+
+        model = PeftModel.from_pretrained(model, args.adapter).merge_and_unload()
     model.to(args.device).eval()
+    if args.prompt_format == "chat_template":
+        def formatter(instruction):
+            return tokenizer.apply_chat_template([{"role": "user", "content": instruction.strip()}],
+                                                 tokenize=False, add_generation_prompt=True)
+    else:
+        formatter = format_prompt
 
     started = time.time()
     outputs = generate_responses(
@@ -174,6 +192,7 @@ def main(argv: list[str] | None = None) -> int:
         max_new_tokens=args.max_new_tokens,
         repetition_penalty=args.repetition_penalty,
         no_repeat_ngram_size=args.no_repeat_ngram_size,
+        formatter=formatter,
     )
     seconds = time.time() - started
 
@@ -202,8 +221,9 @@ def main(argv: list[str] | None = None) -> int:
             "repetition_penalty": args.repetition_penalty,
             "no_repeat_ngram_size": args.no_repeat_ngram_size,
             "stop_tokens": tokenizer.convert_ids_to_tokens(stop_token_ids(tokenizer)),
-            "prompt_format": format_prompt("{instruction}"),
+            "prompt_format": formatter("{instruction}"),
         },
+        "adapter": args.adapter,
         "batch_size": args.batch_size,
         "dtype": args.dtype,
         "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu",

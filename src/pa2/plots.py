@@ -3,6 +3,7 @@
 Usage:
     python -m pa2.plots sft --metrics outputs/sft/run/metrics.jsonl --out outputs/sft/sft_curves.png
     python -m pa2.plots dpo --metrics outputs/dpo/hh/run/metrics.jsonl --out outputs/dpo/hh_curves.png --title "DPO on HH-RLHF"
+    python -m pa2.plots lora --metrics outputs/lora/run/log_history.json --out outputs/lora/lora_curves.png
 """
 
 from __future__ import annotations
@@ -112,17 +113,65 @@ def plot_dpo(metrics_path: str | Path, out_path: str | Path, title: str = "DPO",
     return out_path
 
 
+def plot_lora(log_history_path: str | Path, out_path: str | Path, title: str = "LoRA-DPO persona") -> Path:
+    """Curves from TRL's log history: training rows carry `loss`, evaluation rows `eval_loss`."""
+
+    import math
+
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    history = json.loads(Path(log_history_path).read_text())
+    train = [row for row in history if "loss" in row and "rewards/accuracies" in row]
+    evals = [row for row in history if "eval_loss" in row]
+
+    fig, (ax_loss, ax_acc, ax_reward) = plt.subplots(1, 3, figsize=(15, 4))
+    for ax, train_key, eval_key, label in ((ax_loss, "loss", "eval_loss", "DPO loss"),
+                                           (ax_acc, "rewards/accuracies", "eval_rewards/accuracies", "reward accuracy")):
+        ax.plot([r["step"] for r in train], [r[train_key] for r in train], color="tab:blue", alpha=0.35, linewidth=1, label="train (8-pair step)")
+        ax.plot([r["step"] for r in train], ema([r[train_key] for r in train], 0.6), color="tab:blue", linewidth=2, label="train (EMA 0.6)")
+        ax.plot([r["step"] for r in evals], [r[eval_key] for r in evals], "o-", color="tab:orange", label="held-out (20 pairs)")
+        ax.set_xlabel("optimizer step")
+        ax.set_ylabel(label)
+        ax.legend(fontsize=8)
+    ax_loss.axhline(math.log(2), color="black", linestyle=":", linewidth=1)
+    ax_loss.set_title(f"{title}: loss")
+    ax_acc.axhline(0.5, color="black", linestyle=":", linewidth=1)
+    ax_acc.set_title(f"{title}: reward accuracy")
+
+    steps = [r["step"] for r in evals]
+    ax_reward.plot(steps, [r["eval_rewards/chosen"] for r in evals], "o-", color="tab:green", label="chosen (persona) reward")
+    ax_reward.plot(steps, [r["eval_rewards/rejected"] for r in evals], "o-", color="tab:red", label="rejected (neutral) reward")
+    ax_reward.plot(steps, [r["eval_rewards/margins"] for r in evals], "o-", color="tab:purple", label="margin")
+    ax_reward.axhline(0, color="black", linestyle=":", linewidth=1)
+    ax_reward.set_xlabel("optimizer step")
+    ax_reward.set_ylabel("implicit reward, beta x (log pi - log pi_ref)")
+    ax_reward.set_title(f"{title}: held-out rewards")
+    ax_reward.legend(fontsize=8)
+
+    fig.tight_layout()
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, dpi=150)
+    plt.close(fig)
+    return out_path
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("kind", choices=["sft", "dpo"])
+    parser.add_argument("kind", choices=["sft", "dpo", "lora"])
     parser.add_argument("--metrics", required=True)
     parser.add_argument("--out", required=True)
     parser.add_argument("--title", default="DPO")
     args = parser.parse_args(argv)
     if args.kind == "sft":
         print("wrote", plot_sft(args.metrics, args.out))
-    else:
+    elif args.kind == "dpo":
         print("wrote", plot_dpo(args.metrics, args.out, args.title))
+    else:
+        print("wrote", plot_lora(args.metrics, args.out))
     return 0
 
 

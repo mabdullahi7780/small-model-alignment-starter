@@ -1,0 +1,25 @@
+# Task 5: TRL DPOTrainer + PEFT LoRA persona tuning on the provided Ramsay-style pairs.
+model: HuggingFaceTB/SmolLM2-360M-Instruct
+data: data/persona_lora/ramsay_style_preferences.json
+seed: 42
+val_pairs: 20                 # held out from the 220 pairs; 200 train
+max_length: 512               # chat template + prompt + response; every pair is far shorter
+
+# LoRA: rank-16 updates on every linear projection (attention q, k, v, o and MLP gate, up, down),
+# about 8.7M trainable parameters (2.4% of the model). Style changes word choice everywhere, so
+# all linear layers are adapted rather than attention only.
+lora_r: 16
+lora_alpha: 32                # update scaled by alpha / r = 2
+lora_dropout: 0.05
+lora_target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+
+beta: 0.1                     # same anchor strength as the from-scratch DPO runs
+lr: 5.0e-5                    # LoRA trains few parameters from B = 0, so it needs a larger step than full DPO (1e-6)
+lr_scheduler: linear
+warmup_ratio: 0.1
+per_device_batch_size: 4
+grad_accum_steps: 2           # 8 pairs per optimizer step
+epochs: 3                     # 200 pairs x 3 / 8 = 75 steps
+grad_clip: 1.0
+eval_steps: 5
+precision: fp16               # fp16 autocast on the T4, fp32 weights
