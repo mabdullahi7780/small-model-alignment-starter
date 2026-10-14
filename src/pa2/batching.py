@@ -77,3 +77,18 @@ def build_sft_batch(tokenizer, prompts, responses, max_length, pad_to_max_length
         raise ValueError("prompts and responses must have the same length")
     pairs = [tokenize_pair(tokenizer, prompt, response, max_length) for prompt, response in zip(prompts, responses)]
     return collate(pairs, pad_token_id(tokenizer), max_length if pad_to_max_length else None)
+
+
+def build_dpo_batch(tokenizer, prompts, chosen_responses, rejected_responses, max_length, pad_to_max_length=True):
+    """Two response-masked LM batches over the same prompts: {"chosen": ..., "rejected": ...}.
+
+    Row i of both batches belongs to preference pair i, and the prompt is tokenized the same
+    way in both, so the two sequence scores differ only through the responses.
+    """
+
+    if not len(prompts) == len(chosen_responses) == len(rejected_responses):
+        raise ValueError("prompts, chosen_responses and rejected_responses must have the same length")
+    return {
+        "chosen": build_sft_batch(tokenizer, prompts, chosen_responses, max_length, pad_to_max_length),
+        "rejected": build_sft_batch(tokenizer, prompts, rejected_responses, max_length, pad_to_max_length),
+    }

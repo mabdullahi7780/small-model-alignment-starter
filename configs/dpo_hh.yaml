@@ -1,0 +1,26 @@
+# Task 4, run 1: DPO on HH-RLHF style pairs (guide configuration from the manual, sections 10.3 and 10.4).
+dataset: hh                   # Anthropic/hh-rlhf, harmless-base + helpful-base, single-turn
+tokenizer: Qwen/Qwen2.5-0.5B  # identical to the tokenizer saved with the SFT checkpoint
+seed: 42
+max_length: 512
+max_prompt_length: 256
+train_pairs: 15000
+val_pairs: 1000
+
+beta: 0.1
+per_device_batch_size: 1      # pairs per micro-batch (2 sequences: chosen and rejected)
+grad_accum_steps: 32          # effective batch 32 pairs
+epochs: 1
+
+optimizer: adamw
+lr: 1.0e-6                    # fixed, no warmup or decay
+betas: [0.9, 0.999]
+weight_decay: 0.0             # the reference model, not weight decay, anchors the policy
+grad_clip: 1.0
+precision: fp16_autocast      # policy: fp32 weights + fp16 autocast + loss scaling; reference: same compute path
+
+policy_device: cuda:0
+reference_device: cuda:1      # frozen copy of the SFT checkpoint, no gradients
+eval_every: 50                # optimizer steps; checkpoint selection by validation reward accuracy
+eval_batch_pairs: 2           # validation forward: 2 pairs = 4 sequences
+log_every: 10
