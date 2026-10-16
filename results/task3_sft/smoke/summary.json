@@ -1,0 +1,16 @@
+{
+  "steps_run": 20,
+  "total_steps": 938,
+  "warmup_steps": 28,
+  "initial_val_loss": 1.368804565354293,
+  "best_step": 20,
+  "best_val_loss": 1.3397834350819329,
+  "final_val_loss": 1.3397834350819329,
+  "skipped_steps": 0,
+  "train_seconds": 85.6,
+  "seconds_per_step": 4.282,
+  "eval_seconds": 39.5,
+  "projected_full_run_hours": 1.24,
+  "peak_allocated_gib": 11.95,
+  "peak_reserved_gib": 12.67
+}

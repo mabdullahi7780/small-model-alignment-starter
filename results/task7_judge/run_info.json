@@ -1,0 +1,31 @@
+{
+  "commit": "e59d719f22a421870799ce12c677ac8e39c886d9",
+  "judge_model": "google/gemini-3.6-flash",
+  "flags": [
+    "--batch_size",
+    "5",
+    "--sleep_seconds",
+    "5",
+    "--max_retries",
+    "3",
+    "--reuse_judgments"
+  ],
+  "jobs": [
+    [
+      "dpo_hh_vs_sft",
+      "quality"
+    ],
+    [
+      "dpo_ultrafeedback_vs_sft",
+      "quality"
+    ],
+    [
+      "lora_vs_base_persona",
+      "persona_style"
+    ],
+    [
+      "lora_vs_base_persona",
+      "quality"
+    ]
+  ]
+}

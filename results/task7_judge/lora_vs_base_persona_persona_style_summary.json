@@ -1,0 +1,103 @@
+{
+  "comparison": "lora_vs_base_persona",
+  "criterion": "persona_style",
+  "judge_model": "google/gemini-3.6-flash",
+  "evaluated": "smollm2_lora",
+  "baseline": "smollm2_base",
+  "pairs": 40,
+  "judged_valid": 40,
+  "unknown": 0,
+  "not_judged": 0,
+  "failed_batches": 0,
+  "requests_with_retries": 0,
+  "wins": 24,
+  "losses": 0,
+  "ties": 16,
+  "win_rate_ties_as_half": 0.8,
+  "win_rate_without_ties": 1.0,
+  "win_rate_without_ties_ci95": [
+    1.0,
+    1.0
+  ],
+  "position_a_share": 0.5,
+  "by_category": {
+    "coding": {
+      "wins": 7,
+      "losses": 0,
+      "ties": 3,
+      "win_rate_ties_as_half": 0.85,
+      "win_rate_without_ties": 1.0,
+      "win_rate_without_ties_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "cooking": {
+      "wins": 10,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_ties_as_half": 1.0,
+      "win_rate_without_ties": 1.0,
+      "win_rate_without_ties_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "general": {
+      "wins": 2,
+      "losses": 0,
+      "ties": 8,
+      "win_rate_ties_as_half": 0.6,
+      "win_rate_without_ties": 1.0,
+      "win_rate_without_ties_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "safety": {
+      "wins": 5,
+      "losses": 0,
+      "ties": 5,
+      "win_rate_ties_as_half": 0.75,
+      "win_rate_without_ties": 1.0,
+      "win_rate_without_ties_ci95": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "length": {
+    "evaluated_longer": {
+      "pairs": 10,
+      "wins": 6,
+      "losses": 0,
+      "ties": 4,
+      "win_rate_ties_as_half": 0.8,
+      "win_rate_without_ties": 1.0,
+      "win_rate_without_ties_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "evaluated_not_longer": {
+      "pairs": 30,
+      "wins": 18,
+      "losses": 0,
+      "ties": 12,
+      "win_rate_ties_as_half": 0.8,
+      "win_rate_without_ties": 1.0,
+      "win_rate_without_ties_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "mean_words_evaluated": 151.1,
+    "mean_words_baseline": 209.3
+  },
+  "this_run": {
+    "requests": 8,
+    "batches": 8,
+    "failed_batches": 0,
+    "skipped": 0
+  }
+}

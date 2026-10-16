@@ -1,0 +1,20 @@
+{
+  "commit": "587c019adbf104c23e1915a0d8992af9cc6e7ea1",
+  "torch": "2.11.0+cu128",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "generator": "qwen2.5-0.5b-base",
+  "prompts": "eval_sets/alpaca_eval_300_seed42.json",
+  "batch_size": 32,
+  "max_new_tokens": 512,
+  "variants": {
+    "greedy": [
+      0,
+      1.0
+    ],
+    "greedy_rp1.1": [
+      1,
+      1.1
+    ]
+  },
+  "dtype": "float32"
+}

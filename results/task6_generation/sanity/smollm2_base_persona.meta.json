@@ -1,0 +1,36 @@
+{
+  "generator": "smollm2-360m-instruct",
+  "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "prompts_file": "eval_sets/persona_style_eval_40.json",
+  "prompts_sha256": "76c5758ef8f5755940f947e6989b03d32cd8d10e8da47fa3ad221db8a7a7b22a",
+  "decoding": {
+    "strategy": "greedy",
+    "max_new_tokens": 512,
+    "repetition_penalty": 1.1,
+    "no_repeat_ngram_size": 0,
+    "stop_tokens": [
+      "<|im_end|>"
+    ],
+    "prompt_format": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\n{instruction}<|im_end|>\n<|im_start|>assistant\n"
+  },
+  "adapter": null,
+  "batch_size": 32,
+  "dtype": "float32",
+  "device": "Tesla T4",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6"
+  },
+  "seconds": 13.3,
+  "stats": {
+    "count": 3,
+    "stopped_on_its_own": 1.0,
+    "hit_max_new_tokens": 0.0,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.0,
+    "empty_output": 0.0,
+    "mean_new_tokens": 302.6666666666667,
+    "median_new_tokens": 281,
+    "mean_words": 227.0
+  }
+}

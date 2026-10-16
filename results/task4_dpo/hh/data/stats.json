@@ -1,0 +1,59 @@
+{
+  "source": "Anthropic/hh-rlhf",
+  "revision": "09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa",
+  "harmless-base": {
+    "test_rows": 2312,
+    "train_rows": 42537,
+    "val": {
+      "scanned": 1771,
+      "unusable_row": 1269,
+      "excluded_prompt": 2,
+      "kept": 500
+    },
+    "train": {
+      "scanned": 27368,
+      "unusable_row": 19570,
+      "excluded_prompt": 295,
+      "response_too_long": 2,
+      "prompt_too_long": 1,
+      "kept": 7500
+    }
+  },
+  "helpful-base": {
+    "test_rows": 2354,
+    "train_rows": 43835,
+    "val": {
+      "scanned": 1807,
+      "unusable_row": 1285,
+      "excluded_prompt": 21,
+      "response_too_long": 1,
+      "kept": 500
+    },
+    "train": {
+      "scanned": 25936,
+      "unusable_row": 18389,
+      "prompt_too_long": 3,
+      "response_too_long": 12,
+      "excluded_prompt": 32,
+      "kept": 7500
+    }
+  },
+  "dataset": "hh",
+  "max_length": 512,
+  "max_prompt_length": 256,
+  "seed": 42,
+  "train_summary": {
+    "pairs": 15000,
+    "prompt_tokens_mean": 22.9,
+    "chosen_tokens_mean": 47.0,
+    "rejected_tokens_mean": 44.1,
+    "chosen_longer_share": 0.508
+  },
+  "val_summary": {
+    "pairs": 1000,
+    "prompt_tokens_mean": 22.7,
+    "chosen_tokens_mean": 46.0,
+    "rejected_tokens_mean": 42.3,
+    "chosen_longer_share": 0.529
+  }
+}

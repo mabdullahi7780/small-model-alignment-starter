@@ -1,0 +1,17 @@
+{
+  "commit": "219116ee34db55b623d690dddeb4c7014c6f7171",
+  "torch": "2.11.0+cu128",
+  "decoding": [
+    "--max-new-tokens",
+    "512",
+    "--repetition-penalty",
+    "1.1",
+    "--batch-size",
+    "32",
+    "--dtype",
+    "float32"
+  ],
+  "sanity_prompts": 3,
+  "qwen_tokenizer": "Qwen/Qwen2.5-0.5B",
+  "smol": "HuggingFaceTB/SmolLM2-360M-Instruct"
+}

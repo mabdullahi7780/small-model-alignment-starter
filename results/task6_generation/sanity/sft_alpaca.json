@@ -1,0 +1,38 @@
+[
+  {
+    "id": "alpaca-eval-42-0000",
+    "instruction": "What are the names of some famous actors that started their careers on Broadway?",
+    "output": "1. Marlon Brando\n2. Tom Hanks\n3. Tim Robbins\n4. Robert De Niro\n5. Leonardo DiCaprio\n6. Morgan Freeman\n7. Michael Douglas\n8. John Travolta\n9. Tom Cruise\n10. Mel Gibson",
+    "generator": "qwen2.5-0.5b-sft",
+    "dataset": "alpaca_eval",
+    "prompt_tokens": 23,
+    "new_tokens": 58,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  },
+  {
+    "id": "alpaca-eval-42-0001",
+    "instruction": "Hi, my sister and her girlfriends want me to play kickball with them. Can you explain how the game is played, so they don't take advantage of me?",
+    "output": "Sure! Kickball is a team sport that involves two teams of four players each. The goal is to score points by kicking the ball into the opposing team's goal.\n\nTo start the game, both teams line up on opposite sides of the field or court. Each player takes one end of the ball and kicks it towards their teammate. If the ball hits an opponent's end zone (the area where the other team's goalpost is located), that player scores a point for their team.\n\nThe game continues until one team has scored 10 points or when all players have been eliminated. The team with the most points at the end wins the game.\n\nIt's important not to take advantage of your sister and her girlfriend in this game as it can be frustrating and lead to negative feelings about the game. Instead, focus on playing well and having fun together while supporting your teammates.",
+    "generator": "qwen2.5-0.5b-sft",
+    "dataset": "alpaca_eval",
+    "prompt_tokens": 42,
+    "new_tokens": 176,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  },
+  {
+    "id": "alpaca-eval-42-0002",
+    "instruction": "What is some cool music from the 1920s?",
+    "output": "Some popular and influential music from the 1920s include:\n\n1. \"The Star-Spangled Banner\" by Francis Scott Key - a patriotic song about the United States of America's victory over the British Empire during the War of Independence.\n\n2. \"I'm Gonna Be\" by Louis Armstrong - a classic jazz tune that features trumpet soloists and a catchy melody.\n\n3. \"Take Me Home, Country Roads\" by Johnny Cash - a folk song that tells the story of a man who travels to his hometown for a weekend and then returns home empty-handed.\n\n4. \"Mack the Knife\" by The Beatles - a rockabilly song that features a guitar solo and a memorable chorus.\n\n5. \"I Want to Dance with Somebody\" by Elvis Presley - a classic rock and roll song that showcases Elvis' vocal prowess and his ability to create memorable lyrics.\n\n6. \"Don't Stop Believing\" by Journey - a soulful ballad that explores themes of faith, love, and perseverance.\n\n7. \"Stand By Me\" by The Temptations - a pop hit that features a powerful vocal performance and a catchy chorus.\n\n8. \"You're My Sunshine\" by The Beach Boys - a classic pop song that showcases the band's ability to create catchy melodies and memorable choruses.",
+    "generator": "qwen2.5-0.5b-sft",
+    "dataset": "alpaca_eval",
+    "prompt_tokens": 22,
+    "new_tokens": 266,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  }
+]

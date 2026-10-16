@@ -1,0 +1,26 @@
+{
+  "greedy": {
+    "count": 300,
+    "stopped_on_its_own": 0.24666666666666667,
+    "hit_max_new_tokens": 0.7533333333333333,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.7633333333333333,
+    "empty_output": 0.0,
+    "mean_new_tokens": 432.3933333333333,
+    "median_new_tokens": 512.0,
+    "mean_words": 311.85,
+    "seconds": 276.4
+  },
+  "greedy_rp1.1": {
+    "count": 300,
+    "stopped_on_its_own": 0.43333333333333335,
+    "hit_max_new_tokens": 0.5666666666666667,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.42333333333333334,
+    "empty_output": 0.0,
+    "mean_new_tokens": 389.2966666666667,
+    "median_new_tokens": 512.0,
+    "mean_words": 278.5933333333333,
+    "seconds": 281.9
+  }
+}

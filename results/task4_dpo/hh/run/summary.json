@@ -1,0 +1,41 @@
+{
+  "dataset": "hh",
+  "steps_run": 469,
+  "total_steps": 469,
+  "initial": {
+    "step": 0,
+    "loss": 0.6931473612785339,
+    "reward_accuracy": 0.0,
+    "reward_margin": 0.0,
+    "chosen_reward": 0.0,
+    "rejected_reward": 0.0,
+    "max_abs_z": 0.0
+  },
+  "best": {
+    "step": 469,
+    "loss": 0.6230005025863647,
+    "reward_accuracy": 0.6650000214576721,
+    "reward_margin": 0.2889620065689087,
+    "chosen_reward": -0.46193093061447144,
+    "rejected_reward": -0.7508929371833801,
+    "max_abs_z": 4.052664279937744
+  },
+  "final": {
+    "step": 469,
+    "loss": 0.6230005025863647,
+    "reward_accuracy": 0.6650000214576721,
+    "reward_margin": 0.2889620065689087,
+    "chosen_reward": -0.46193093061447144,
+    "rejected_reward": -0.7508929371833801,
+    "max_abs_z": 4.052664279937744
+  },
+  "skipped_steps": 2,
+  "train_seconds": 2938.9,
+  "seconds_per_step": 6.266,
+  "eval_seconds": 60.1,
+  "projected_full_run_hours": 1.0,
+  "policy_peak_allocated_gib": 11.62,
+  "policy_peak_reserved_gib": 12.16,
+  "reference_peak_allocated_gib": 4.73,
+  "reference_peak_reserved_gib": 5.03
+}

@@ -1,0 +1,31 @@
+{
+  "dataset": "hh",
+  "tokenizer": "Qwen/Qwen2.5-0.5B",
+  "seed": 42,
+  "max_length": 512,
+  "max_prompt_length": 256,
+  "train_pairs": 15000,
+  "val_pairs": 1000,
+  "beta": 0.1,
+  "per_device_batch_size": 1,
+  "grad_accum_steps": 32,
+  "epochs": 1,
+  "optimizer": "adamw",
+  "lr": 1e-06,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "weight_decay": 0.0,
+  "grad_clip": 1.0,
+  "precision": "fp16_autocast",
+  "policy_device": "cuda:0",
+  "reference_device": "cuda:1",
+  "eval_every": 50,
+  "eval_batch_pairs": 2,
+  "log_every": 10,
+  "sft_model": "/kaggle/input/notebooks/mabdullahi454/pa2-03-sft/outputs/sft/run/best",
+  "total_steps": 469,
+  "train_pairs_loaded": 15000,
+  "val_pairs_loaded": 1000
+}

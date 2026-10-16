@@ -1,0 +1,8 @@
+{
+  "commit": "9b3dea26bc93e2869f708c96bbaf46ba5a1c8637",
+  "torch": "2.11.0+cu128",
+  "config": "configs/sft.yaml",
+  "smoke_steps": 20,
+  "max_peak_gib": 13.0,
+  "max_hours": 4.0
+}

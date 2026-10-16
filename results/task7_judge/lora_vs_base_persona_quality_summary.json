@@ -1,0 +1,103 @@
+{
+  "comparison": "lora_vs_base_persona",
+  "criterion": "quality",
+  "judge_model": "google/gemini-3.6-flash",
+  "evaluated": "smollm2_lora",
+  "baseline": "smollm2_base",
+  "pairs": 40,
+  "judged_valid": 40,
+  "unknown": 0,
+  "not_judged": 0,
+  "failed_batches": 0,
+  "requests_with_retries": 0,
+  "wins": 13,
+  "losses": 25,
+  "ties": 2,
+  "win_rate_ties_as_half": 0.35,
+  "win_rate_without_ties": 0.34210526315789475,
+  "win_rate_without_ties_ci95": [
+    0.19126323715045004,
+    0.4929472891653395
+  ],
+  "position_a_share": 0.5789473684210527,
+  "by_category": {
+    "coding": {
+      "wins": 5,
+      "losses": 4,
+      "ties": 1,
+      "win_rate_ties_as_half": 0.55,
+      "win_rate_without_ties": 0.5555555555555556,
+      "win_rate_without_ties_ci95": [
+        0.23091161215558614,
+        0.8801994989555251
+      ]
+    },
+    "cooking": {
+      "wins": 3,
+      "losses": 7,
+      "ties": 0,
+      "win_rate_ties_as_half": 0.3,
+      "win_rate_without_ties": 0.3,
+      "win_rate_without_ties_ci95": [
+        0.015969015774687012,
+        0.584030984225313
+      ]
+    },
+    "general": {
+      "wins": 2,
+      "losses": 8,
+      "ties": 0,
+      "win_rate_ties_as_half": 0.2,
+      "win_rate_without_ties": 0.2,
+      "win_rate_without_ties_ci95": [
+        -0.04792256855720095,
+        0.447922568557201
+      ]
+    },
+    "safety": {
+      "wins": 3,
+      "losses": 6,
+      "ties": 1,
+      "win_rate_ties_as_half": 0.35,
+      "win_rate_without_ties": 0.3333333333333333,
+      "win_rate_without_ties_ci95": [
+        0.02534904641652591,
+        0.6413176202501407
+      ]
+    }
+  },
+  "length": {
+    "evaluated_longer": {
+      "pairs": 10,
+      "wins": 5,
+      "losses": 5,
+      "ties": 0,
+      "win_rate_ties_as_half": 0.5,
+      "win_rate_without_ties": 0.5,
+      "win_rate_without_ties_ci95": [
+        0.19009678930349883,
+        0.8099032106965012
+      ]
+    },
+    "evaluated_not_longer": {
+      "pairs": 30,
+      "wins": 8,
+      "losses": 20,
+      "ties": 2,
+      "win_rate_ties_as_half": 0.3,
+      "win_rate_without_ties": 0.2857142857142857,
+      "win_rate_without_ties_ci95": [
+        0.11838228040747059,
+        0.45304629102110083
+      ]
+    },
+    "mean_words_evaluated": 151.1,
+    "mean_words_baseline": 209.3
+  },
+  "this_run": {
+    "requests": 8,
+    "batches": 8,
+    "failed_batches": 0,
+    "skipped": 0
+  }
+}

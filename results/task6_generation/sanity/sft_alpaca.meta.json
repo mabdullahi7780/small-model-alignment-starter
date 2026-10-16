@@ -1,0 +1,37 @@
+{
+  "generator": "qwen2.5-0.5b-sft",
+  "model": "/kaggle/input/notebooks/mabdullahi454/pa2-03-sft/outputs/sft/run/best",
+  "prompts_file": "eval_sets/alpaca_eval_300_seed42.json",
+  "prompts_sha256": "5ba46385200bd58873ad8302b7d69e59b1003a27f1b794d8989b7a1b71dde363",
+  "decoding": {
+    "strategy": "greedy",
+    "max_new_tokens": 512,
+    "repetition_penalty": 1.1,
+    "no_repeat_ngram_size": 0,
+    "stop_tokens": [
+      "<|endoftext|>",
+      "<|im_end|>"
+    ],
+    "prompt_format": "<|im_start|>user\n{instruction}<|im_end|>\n<|im_start|>assistant\n"
+  },
+  "adapter": null,
+  "batch_size": 32,
+  "dtype": "float32",
+  "device": "Tesla T4",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6"
+  },
+  "seconds": 8.5,
+  "stats": {
+    "count": 3,
+    "stopped_on_its_own": 1.0,
+    "hit_max_new_tokens": 0.0,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.0,
+    "empty_output": 0.0,
+    "mean_new_tokens": 166.66666666666666,
+    "median_new_tokens": 176,
+    "mean_words": 129.33333333333334
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "commit": "2f6e9201c61001fe37550119dbadbbb8bfab067e",
+  "torch": "2.11.0+cu128",
+  "config": "configs/lora_persona.yaml",
+  "base_model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "samples_per_category": 2
+}

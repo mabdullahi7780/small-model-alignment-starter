@@ -1,0 +1,41 @@
+{
+  "dataset": "ultrafeedback",
+  "steps_run": 469,
+  "total_steps": 469,
+  "initial": {
+    "step": 0,
+    "loss": 0.6931473612785339,
+    "reward_accuracy": 0.0,
+    "reward_margin": 0.0,
+    "chosen_reward": 0.0,
+    "rejected_reward": 0.0,
+    "max_abs_z": 0.0
+  },
+  "best": {
+    "step": 350,
+    "loss": 0.572992742061615,
+    "reward_accuracy": 0.7099999785423279,
+    "reward_margin": 0.5830520987510681,
+    "chosen_reward": -0.13267074525356293,
+    "rejected_reward": -0.715722918510437,
+    "max_abs_z": 7.50006103515625
+  },
+  "final": {
+    "step": 469,
+    "loss": 0.5656588077545166,
+    "reward_accuracy": 0.699999988079071,
+    "reward_margin": 0.6281694173812866,
+    "chosen_reward": -0.16936005651950836,
+    "rejected_reward": -0.7975294589996338,
+    "max_abs_z": 7.457959175109863
+  },
+  "skipped_steps": 3,
+  "train_seconds": 4323.1,
+  "seconds_per_step": 9.218,
+  "eval_seconds": 143.8,
+  "projected_full_run_hours": 1.64,
+  "policy_peak_allocated_gib": 12.18,
+  "policy_peak_reserved_gib": 12.78,
+  "reference_peak_allocated_gib": 4.74,
+  "reference_peak_reserved_gib": 5.05
+}

@@ -1,0 +1,35 @@
+{
+  "source": "HuggingFaceH4/ultrachat_200k",
+  "revision": "8049631c405ae6576f93f445c6b8166f76f5505a",
+  "max_length": 512,
+  "seed": 42,
+  "excluded_eval_files": [
+    "eval_sets/alpaca_eval_300_seed42.json",
+    "eval_sets/hh_rlhf_eval_300_seed42.json"
+  ],
+  "val": {
+    "split": "test_sft",
+    "available": 23110,
+    "scanned": 1778,
+    "too_long": 778,
+    "kept": 1000,
+    "total_tokens_mean": 314.7,
+    "total_tokens_median": 318.5,
+    "total_tokens_max": 509,
+    "response_tokens_mean": 211.7,
+    "prompt_tokens_mean": 103.0
+  },
+  "train": {
+    "split": "train_sft",
+    "available": 207865,
+    "scanned": 51867,
+    "too_long": 21862,
+    "not_a_user_assistant_turn": 5,
+    "kept": 30000,
+    "total_tokens_mean": 312.7,
+    "total_tokens_median": 315.0,
+    "total_tokens_max": 512,
+    "response_tokens_mean": 212.7,
+    "prompt_tokens_mean": 100.0
+  }
+}

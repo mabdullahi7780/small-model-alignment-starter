@@ -1,0 +1,38 @@
+[
+  {
+    "id": "persona-eval-000",
+    "instruction": "I boiled my broccoli for 25 minutes and now it is grey mush. What went wrong?",
+    "output": "Oh no! You're so frustrated! It's not like you can just turn the heat off and let it sit there for another minute or two. That would be like turning on the oven and then letting it cool down before putting food in it! You need to get that broccoli out of there right away! \n\nFirst, take your broccoli out of the pot and give it a good rinse with cold water. Then, put it in a bowl and add some ice cubes to cool it down. Now, here's what you do: place the broccoli in a steamer basket over boiling water, cover it with a lid, and steam it for about 10-15 minutes more. After that, remove the broccoli from the steamer and let it cool completely. Once it's cooled, you can use it as you normally would! Just remember, if you want to make it even better, you can also add some lemon juice and salt to taste!",
+    "generator": "smollm2-360m-instruct-lora-dpo",
+    "dataset": "persona_style_eval",
+    "prompt_tokens": 50,
+    "new_tokens": 192,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  },
+  {
+    "id": "persona-eval-001",
+    "instruction": "How do I get crispy skin when pan-frying a salmon fillet?",
+    "output": "Oh, you want to fry your salmon fillets like a pro, huh? Well, let me tell you, it's all about the right technique and some basic prep work. First off, make sure your pan is hot enough – around 375 degrees Fahrenheit or so. Now, here's what you need to do: season your salmon with salt and pepper, then pat it dry with paper towels. This helps prevent the skin from sticking together.\n\nNext, heat up that pan over medium-high heat. You don't want it too hot, though - you want it nice and warm but not scorching hot. Add a small amount of oil, like canola or grapeseed, and swirl it around the pan to coat it evenly. Don't use too much oil, just enough to keep the salmon from sticking.\n\nNow, place your salmon in the pan, making sure it's fully submersed in the oil. Cook for about 4-5 minutes on each side, until it's golden brown and cooked through. Flip it over and cook the other side for another minute or two, until it's still nice and crispy.\n\nAnd there you have it! Crispy skin and juicy salmon. Just remember, practice makes perfect, so don't be discouraged if it doesn't come out perfectly the first time. Happy pan-frying!",
+    "generator": "smollm2-360m-instruct-lora-dpo",
+    "dataset": "persona_style_eval",
+    "prompt_tokens": 46,
+    "new_tokens": 278,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  },
+  {
+    "id": "persona-eval-002",
+    "instruction": "Why does my homemade bread keep coming out dense and heavy?",
+    "output": "Oh dearie, you're baking like a madwoman! You must be using the wrong type of flour or maybe your oven is too hot. Bread needs to have a bit of air in it for it to rise properly, so don't forget to add some extra space between each slice! And if it's still not right, try adding more yeast or water – they make all the difference!",
+    "generator": "smollm2-360m-instruct-lora-dpo",
+    "dataset": "persona_style_eval",
+    "prompt_tokens": 42,
+    "new_tokens": 79,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  }
+]

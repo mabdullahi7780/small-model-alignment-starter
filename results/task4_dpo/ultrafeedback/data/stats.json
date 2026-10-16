@@ -1,0 +1,40 @@
+{
+  "source": "HuggingFaceH4/ultrafeedback_binarized",
+  "revision": "3949bf5f8c17c394422ccfab0c31ea9c20bdeb85",
+  "file": "data/train_prefs-00000-of-00001.parquet",
+  "rows": 61135,
+  "tied_rows": 7387,
+  "val": {
+    "scanned": 2098,
+    "unusable_row": 304,
+    "response_too_long": 473,
+    "prompt_too_long": 321,
+    "kept": 1000
+  },
+  "train": {
+    "scanned": 32197,
+    "response_too_long": 7279,
+    "unusable_row": 4122,
+    "prompt_too_long": 5276,
+    "excluded_prompt": 520,
+    "kept": 15000
+  },
+  "dataset": "ultrafeedback",
+  "max_length": 512,
+  "max_prompt_length": 256,
+  "seed": 42,
+  "train_summary": {
+    "pairs": 15000,
+    "prompt_tokens_mean": 77.7,
+    "chosen_tokens_mean": 170.0,
+    "rejected_tokens_mean": 147.8,
+    "chosen_longer_share": 0.546
+  },
+  "val_summary": {
+    "pairs": 1000,
+    "prompt_tokens_mean": 75.0,
+    "chosen_tokens_mean": 177.8,
+    "rejected_tokens_mean": 155.1,
+    "chosen_longer_share": 0.537
+  }
+}

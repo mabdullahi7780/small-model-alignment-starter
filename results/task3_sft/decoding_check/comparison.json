@@ -1,0 +1,24 @@
+{
+  "greedy": {
+    "count": 50,
+    "stopped_on_its_own": 0.92,
+    "hit_max_new_tokens": 0.08,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.34,
+    "empty_output": 0.0,
+    "mean_new_tokens": 208.12,
+    "median_new_tokens": 211.5,
+    "mean_words": 163.2
+  },
+  "greedy_rp1.1": {
+    "count": 50,
+    "stopped_on_its_own": 0.98,
+    "hit_max_new_tokens": 0.02,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.06,
+    "empty_output": 0.0,
+    "mean_new_tokens": 194.38,
+    "median_new_tokens": 190.5,
+    "mean_words": 157.56
+  }
+}

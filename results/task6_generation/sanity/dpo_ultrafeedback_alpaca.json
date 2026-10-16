@@ -1,0 +1,38 @@
+[
+  {
+    "id": "alpaca-eval-42-0000",
+    "instruction": "What are the names of some famous actors that started their careers on Broadway?",
+    "output": "1. Marlon Brando - born in 1923, Brando is one of the most iconic and influential actors of all time.\n\n2. Tom Hanks - born in 1940, Hanks has been a prominent actor since he began his career on Broadway in the 1960s.\n\n3. Tim Robbins - born in 1950, Robbins has had a successful career spanning over four decades, starting with his debut role as Andy Dufresne in \"The Lion King\" (1977).\n\n4. Robert De Niro - born in 1942, De Niro's career began at the age of 18 when he joined the cast of \"The Godfather.\"\n\n5. Michael Douglas - born in 1940, Douglas has been an accomplished actor for over five decades, starting with his early roles in \"The Wizard of Oz\" (1950) and \"Casablanca\" (1962).\n\n6. Leonardo DiCaprio - born in 1975, DiCaprio has been a prominent actor since he first appeared on Broadway in the 1990s.\n\n7. Morgan Freeman - born in 1944, Freeman has been an accomplished actor since he first appeared on Broadway in the 1970s.\n\n8. John Travolta - born in 1944, Travolta has been an accomplished actor since he first appeared on Broadway in the 1960s.\n\n9. Tom Cruise - born in 1954, Cruise has been an accomplished actor since he first appeared on Broadway in the 1980s.\n\n10. Eddie Murphy - born in 1949, Murphy has been an accomplished actor since he first appeared on Broadway in the 1980s.",
+    "generator": "qwen2.5-0.5b-dpo-ultrafeedback",
+    "dataset": "alpaca_eval",
+    "prompt_tokens": 23,
+    "new_tokens": 385,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": true
+  },
+  {
+    "id": "alpaca-eval-42-0001",
+    "instruction": "Hi, my sister and her girlfriends want me to play kickball with them. Can you explain how the game is played, so they don't take advantage of me?",
+    "output": "Sure! Kickball is a popular sport that involves two teams of four players each trying to get the ball into their opponent's goal by kicking it through the opposing team's goalposts.\n\nHere are some basic rules for playing kickball:\n\n1. The ball is kicked using your foot or leg.\n2. Players must be at least 5'6\" tall (including the height of the ball).\n3. Each player can only kick once per possession.\n4. The ball cannot be passed or thrown to another player.\n5. The ball must be kicked in such a way that it will not bounce back to the other team.\n6. The goalpost is located on the opposite side of the field from where the ball was kicked.\n7. The first team to score three points wins the game.\n\nTo help your sister and friends have fun while avoiding you, here are some tips:\n\n- Be patient: keep an eye on the ball and try to avoid getting too close to it.\n- Keep your eyes open: look out for any potential hazards like trees, bushes, or other obstacles.\n- Use good judgment: if you see someone else approaching the ball, move away quickly to avoid being caught off guard.\n- Stay focused: concentrate on keeping the ball moving and not letting it fall back to you.\n- Have fun: remember that kickball is a game of chance, so enjoy the experience!\n\nGood luck and have fun playing kickball with your sisters and friends!",
+    "generator": "qwen2.5-0.5b-dpo-ultrafeedback",
+    "dataset": "alpaca_eval",
+    "prompt_tokens": 42,
+    "new_tokens": 294,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  },
+  {
+    "id": "alpaca-eval-42-0002",
+    "instruction": "What is some cool music from the 1920s?",
+    "output": "1. \"The Star-Spangled Banner\" by Francis Scott Key (1813-1865)\n2. \"The Great American Song\" by Louis Armstrong (1907-1971)\n3. \"I'm Gonna Be\" by Duke Ellington (1918-1974)\n4. \"The Four Seasons\" by George Gershwin (1898-1937)\n5. \"The Blue Danube\" by Johann Strauss II (1866-1949)\n6. \"The Lonesome Death of T.S. Eliot\" by Teddy Smith (1908-1998)\n7. \"The Sound of Silence\" by Miles Davis (1926-1991)\n8. \"The Ballad of the Black Cat\" by Bob Dylan (1941-2003)\n9. \"The Rolling Stones' 'Sgt. Pepper's Lonely Hearts Club Band'\" (1967-present)\n10. \"The Beatles' 'Revolution 9'\" (1968-present)",
+    "generator": "qwen2.5-0.5b-dpo-ultrafeedback",
+    "dataset": "alpaca_eval",
+    "prompt_tokens": 22,
+    "new_tokens": 239,
+    "stop_reason": "eos",
+    "wrote_new_turn": false,
+    "repetition_loop": false
+  }
+]

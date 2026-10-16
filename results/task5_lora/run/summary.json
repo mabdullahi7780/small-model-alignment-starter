@@ -1,0 +1,51 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "train_pairs": 200,
+  "val_pairs": 20,
+  "parameters": {
+    "trainable": 8683520,
+    "total": 370504640,
+    "trainable_share": 0.02344
+  },
+  "steps": 75,
+  "train_runtime_seconds": 105.1,
+  "initial_eval": {
+    "eval_loss": 0.6931473016738892,
+    "eval_model_preparation_time": 0.0197,
+    "eval_runtime": 5.3316,
+    "eval_samples_per_second": 3.751,
+    "eval_steps_per_second": 0.938,
+    "eval_entropy": 2.2466806173324585,
+    "eval_num_tokens": 0.0,
+    "eval_logits/chosen": 0.6212968286340973,
+    "eval_logits/rejected": 0.04683486280477958,
+    "eval_mean_token_accuracy": 0.316376793384552,
+    "eval_rewards/chosen": 0.0,
+    "eval_rewards/rejected": 0.0,
+    "eval_rewards/accuracies": 0.0,
+    "eval_rewards/margins": 0.0,
+    "eval_logps/chosen": -174.7008514404297,
+    "eval_logps/rejected": -125.6532211303711
+  },
+  "final_eval": {
+    "eval_loss": 0.1265847235918045,
+    "eval_model_preparation_time": 0.0197,
+    "eval_runtime": 1.0536,
+    "eval_samples_per_second": 18.983,
+    "eval_steps_per_second": 4.746,
+    "eval_entropy": 2.506747007369995,
+    "eval_num_tokens": 115893.0,
+    "eval_logits/chosen": 0.45393085169364744,
+    "eval_logits/rejected": 0.2904038986602211,
+    "eval_mean_token_accuracy": 0.3460713982582092,
+    "eval_rewards/chosen": 1.1195231080055237,
+    "eval_rewards/rejected": -1.0019833207130433,
+    "eval_rewards/accuracies": 1.0,
+    "eval_rewards/margins": 2.121506404876709,
+    "eval_logps/chosen": -163.505615234375,
+    "eval_logps/rejected": -135.67305908203124,
+    "epoch": 3.0
+  },
+  "fp16": true,
+  "logprob_kernel": "trl triton kernel"
+}

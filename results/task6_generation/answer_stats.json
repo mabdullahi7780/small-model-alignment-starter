@@ -1,0 +1,74 @@
+{
+  "dpo_hh_hh": {
+    "count": 300,
+    "stopped_on_its_own": 0.9933333333333333,
+    "hit_max_new_tokens": 0.006666666666666667,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.04666666666666667,
+    "empty_output": 0.0,
+    "mean_new_tokens": 158.44666666666666,
+    "median_new_tokens": 163.0,
+    "mean_words": 130.95666666666668,
+    "seconds": 131.4
+  },
+  "dpo_ultrafeedback_alpaca": {
+    "count": 300,
+    "stopped_on_its_own": 0.9333333333333333,
+    "hit_max_new_tokens": 0.06666666666666667,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.11,
+    "empty_output": 0.0,
+    "mean_new_tokens": 259.58,
+    "median_new_tokens": 261.0,
+    "mean_words": 194.17666666666668,
+    "seconds": 284.8
+  },
+  "sft_alpaca": {
+    "count": 300,
+    "stopped_on_its_own": 0.9733333333333334,
+    "hit_max_new_tokens": 0.02666666666666667,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.08333333333333333,
+    "empty_output": 0.0,
+    "mean_new_tokens": 186.01,
+    "median_new_tokens": 177.5,
+    "mean_words": 142.51,
+    "seconds": 260.5
+  },
+  "sft_hh": {
+    "count": 300,
+    "stopped_on_its_own": 0.99,
+    "hit_max_new_tokens": 0.01,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.05,
+    "empty_output": 0.0,
+    "mean_new_tokens": 163.95333333333335,
+    "median_new_tokens": 164.0,
+    "mean_words": 134.51,
+    "seconds": 175.3
+  },
+  "smollm2_base_persona": {
+    "count": 40,
+    "stopped_on_its_own": 0.975,
+    "hit_max_new_tokens": 0.025,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.025,
+    "empty_output": 0.0,
+    "mean_new_tokens": 289.225,
+    "median_new_tokens": 304.5,
+    "mean_words": 209.3,
+    "seconds": 56.1
+  },
+  "smollm2_lora_persona": {
+    "count": 40,
+    "stopped_on_its_own": 0.975,
+    "hit_max_new_tokens": 0.025,
+    "wrote_new_turn": 0.0,
+    "repetition_loop": 0.025,
+    "empty_output": 0.0,
+    "mean_new_tokens": 206.4,
+    "median_new_tokens": 208.0,
+    "mean_words": 151.1,
+    "seconds": 43.5
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "commit": "52ff638e7348fa384e901dab06fab7ca6593006e",
+  "torch": "2.11.0+cu128",
+  "runs": {
+    "hh": [
+      "configs/dpo_hh.yaml",
+      "DPO on HH-RLHF"
+    ],
+    "ultrafeedback": [
+      "configs/dpo_ultrafeedback.yaml",
+      "DPO on UltraFeedback"
+    ]
+  },
+  "smoke_steps": 8,
+  "max_peak_gib": 13.0,
+  "max_hours_per_run": 3.0
+}
